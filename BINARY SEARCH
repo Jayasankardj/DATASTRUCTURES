@@ -18,18 +18,24 @@ int main()
     while( first <= last )
     {
         if ( array[middle] < search )
+        {
             first = middle + 1;
+            middle=(first+last)/2;
+        }
         else if ( array[middle] == search )
         {
             printf("%d found at location %d.\n", search, middle+1);
             break;
         }
         else
-            last = middle - 1;
-        middle = (first + last)/2;
+         {
+             last = middle - 1;
+             middle = (first + last)/2;
+         }
     }
     if ( first > last )
-        printf("Not found! %d is not present in the list.\n", search);
+    {
+       printf("Not found! %d is not present in the list.\n", search);  
+    }
     return 0;
-
 }
